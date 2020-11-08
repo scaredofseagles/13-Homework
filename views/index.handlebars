@@ -1,0 +1,28 @@
+<h1>Eat-Da Burger!</h1>
+
+<!-- TODO: add burger image-->
+
+<p>Enter the burger you would like to eat! Click the 'Submit' button</p>
+<input>
+</input>
+
+<button>Submit</button>
+
+<!-- List burger after submit || devoured == false -->
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{! FIXME: something something}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<!-- List burgers if devoured == true -->
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{! FIXME: something something}}
+        {{/if}}
+    {{/each}}
+
+</ul>
