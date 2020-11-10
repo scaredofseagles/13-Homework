@@ -1,6 +1,8 @@
 const mysql = require('mysql')
 require('dotenv').config()
 
+let db;
+
 class Database{
     constructor(config){
         this.connection = mysql.createConnection(config)
@@ -25,12 +27,18 @@ class Database{
     }
 }
 
-const db = new Database({
-    host:"localhost",
-    port: 3306,
-    user:process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: "burgers_db"
-})
+if (process.env.JAWSDB_URL) {
+    db = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+    db = new Database({
+        host:"localhost",
+        port: 3306,
+        user:process.env.DB_USER,
+        password: process.env.DB_PASSWORD,
+        database: "burgers_db"
+    })
+}
+
+
 
 module.exports = db
