@@ -1,4 +1,3 @@
-// FIXME: write on-clicks
 
 $(function(){
     // submit new burger to burger list
@@ -23,7 +22,7 @@ $(function(){
         
     })
 
-    // FIXME: sound is not playing
+    // send burger to devoured list || setting devoured = true
     $('.devourBurger').on('click', function(event){
         event.preventDefault()
 

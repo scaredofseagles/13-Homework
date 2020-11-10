@@ -9,7 +9,6 @@ function updateOne(id){
 }
 
 function insertOne(burgerName){
-    console.log("[orm.insert] reached ... ")
     return db.query(`INSERT INTO burgers (burger_string, devoured) VALUES("${burgerName}", false)`)
 }
 

@@ -15,22 +15,17 @@ router.get("/", async function(req, res){
     res.render("index", hbsObject)
 })
 
+// POST newBurger to Menu list
 router.post("/api/burgers", async function(req, res){
-    //console.log(res)
     console.log('[router POST] reached ..')
     const data = await burger.insertOne({
         burger_string: req.body.name
-       // devoured: req.body.devoured
     })
     console.log('[router POST]', data)
     res.json(data)
-
-    // burger.create(["burger_string", "devoured"], [req.body.name, req.body.devoured],
-    // function(result){
-    //     res.json({id: result.burgerId})
-    // })
 })
 
+// change devoured from false to true
 router.put("/api/burgers/:id", async function(req, res){
     const id = req.body.id
     const data = await burger.updateOne(id)

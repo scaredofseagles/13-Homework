@@ -1,10 +1,10 @@
-/*TODO: make it look BEAUTIFUL */
+
 body {
-    background-color: #ffd480;
+    background-color: #ffd480 !important;
     font-family: 'Nunito', sans-serif;
 }
 
-.container, p, h1{
+.container, p, h1, h3{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -12,14 +12,46 @@ body {
     margin: auto;
 }
 
+.addBurger {
+    width: 500px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+
+.burgerForm{
+    width: 500px;
+    height: 50px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
 h1 {
     color: red;
     font-family: 'Press Start 2P', cursive;
 }
 
+img {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-left:auto;
+    margin-right:auto;
+    width:361px;
+    height:281px;
+}
+
 .burgers, .devoured{
-    margin: auto;
-    padding: 20px;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+}
+
+.devoured li {
+    opacity: 80%;
 }
 
 h3 {
