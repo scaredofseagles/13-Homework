@@ -4,25 +4,31 @@
 
 <p>Enter the burger you would like to eat! Click the 'Submit' button</p>
 
-<input></input>
+<input type="text" class="burgerForm" name="name"></input>
 
-<button>Submit</button>
+<button type="submit" class="addBurger">Submit</button>
 
 <!-- FIXME: List burger after submit || devoured == false -->
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{burger}}
-        {{/unless}}
-    {{/each}}
-</ul>
+
+<div>
+    <ul>
+        {{#each burgers}}
+            {{#unless devoured}}
+                {{> burger-eat devoured=false}}
+            {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+
 
 <!-- FIXME: List burgers if devoured == true -->
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burger-eat devoured=true}}
-        {{/if}}
-    {{/each}}
 
-</ul>
+<div>
+    <ul>
+        {{#each burgers}}
+            {{#if devoured}}
+                {{> burger-eat devoured=true}}
+            {{/if}}
+        {{/each}}
+    </ul>
+</div>

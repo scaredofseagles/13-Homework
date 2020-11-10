@@ -1,9 +1,9 @@
 <li>
-    {{name}}
+    {{ burger }}
     <!-- FIXME:-->
-    {{#if devoured}}
+    {{#unless devoured}}
         <button class="devourBurger" data-id="{{id}}" data-eatburger="{{devoured}}">
             Devour it!
         </button>
-    {{/if}}
+    {{/unless}}
 </li>

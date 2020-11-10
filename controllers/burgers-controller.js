@@ -11,17 +11,19 @@ router.get("/", async function(req, res){
     var hbsObject = {
         burgers: data
     }
-    console.log(hbsObject)
+    console.log('[router GET]', hbsObject)
     res.render("index", hbsObject)
 })
 
 router.post("/api/burgers", async function(req, res){
-    console.log(res)
+    //console.log(res)
+    console.log('[router POST] reached ..')
     const data = await burger.insertOne({
-        burger_string: req.body.name,
-        devoured: req.body.devoured
+        burger_string: req.body.name
+       // devoured: req.body.devoured
     })
-    console.log(data)
+    console.log('[router POST]', data)
+    res.json(data)
 
     // burger.create(["burger_string", "devoured"], [req.body.name, req.body.devoured],
     // function(result){
@@ -31,7 +33,7 @@ router.post("/api/burgers", async function(req, res){
 
 router.put("/api/burger/:id", async function(req, res){
     const data = await burger.updateOne({devoured: req.body.devoured})
-    console.log(data)
+    console.log('router PUT', data)
     res.json(data)
 })
 
