@@ -31,8 +31,9 @@ router.post("/api/burgers", async function(req, res){
     // })
 })
 
-router.put("/api/burger/:id", async function(req, res){
-    const data = await burger.updateOne({devoured: req.body.devoured})
+router.put("/api/burgers/:id", async function(req, res){
+    const id = req.body.id
+    const data = await burger.updateOne(id)
     console.log('router PUT', data)
     res.json(data)
 })

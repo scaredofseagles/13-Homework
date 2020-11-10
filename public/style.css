@@ -1,13 +1,34 @@
+/*TODO: make it look BEAUTIFUL */
 body {
     background-color: #ffd480;
+    font-family: 'Nunito', sans-serif;
 }
 
-body {
-    font-family: 'Nunito', sans-serif;
+.container, p, h1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 h1 {
     color: red;
     font-family: 'Press Start 2P', cursive;
+}
+
+.burgers, .devoured{
+    margin: auto;
+    padding: 20px;
+}
+
+h3 {
+    background-color: yellow;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
 }
 

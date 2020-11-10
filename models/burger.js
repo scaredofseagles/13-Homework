@@ -20,7 +20,8 @@ var burger = {
     },
     // to change status devoured status
     updateOne: async function(burgerId){
-        res = await orm.updateOne("burgers", burgerId)
+        console.log('[burger.updateOne] reached ...', burgerId)
+        res = await orm.updateOne(burgerId)
         console.log('Updating', res)
         return res
     }

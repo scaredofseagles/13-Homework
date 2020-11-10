@@ -23,13 +23,17 @@ $(function(){
         
     })
 
-    $('devourBurger').on('click', function(event){
+    // FIXME: sound is not playing
+    $('.devourBurger').on('click', function(event){
         event.preventDefault()
+
+        console.log('clicked devour button!')
 
         var id = $(this).data("id")
         console.log(id)
 
         const newStatus = {
+            id: id,
             isDevoured: true
         }
 
@@ -37,7 +41,7 @@ $(function(){
             type: "PUT",
             data: newStatus
         }).then(function(){
-            console.log(`Changed burger status to`)
+            console.log(`Changed burger status to devoured`)
             location.reload()
         })
         playSound()
