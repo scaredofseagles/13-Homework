@@ -3,11 +3,11 @@ require('dotenv').config()
 
 class Database{
     constructor(config){
-        this.connecttion = mysql.createConnection(config)
+        this.connection = mysql.createConnection(config)
     }
     query(sql, args=[]){
         return new Promise((resolve, reject) =>{
-            this.connecttion.query(sql, args, (err, rows) => {
+            this.connection.query(sql, args, (err, rows) => {
                 if (err)
                     return reject (err)
                 resolve (rows)
@@ -16,7 +16,7 @@ class Database{
     }
     close(){
         return new Promise((resolve, reject) => {
-            this.connecttion.end(err =>{
+            this.connection.end(err =>{
                 if (err)
                     return reject (err)
                 resolve ()
